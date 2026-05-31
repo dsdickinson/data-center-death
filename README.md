@@ -10,8 +10,6 @@ A terminal-based strategy/simulation game where you manage a real-world data cen
 
 ![Game play](images/dcd-004.jpg)
 
-![Game play](images/dcd-005.jpg)
-
 ## Features
 
 - **5 Real Data Center Locations** — Choose from Portland, Des Moines, Phoenix, Ashburn, or Reykjavik, each with unique characteristics
