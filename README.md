@@ -2,6 +2,16 @@
 
 A terminal-based strategy/simulation game where you manage a real-world data center. Balance power consumption, cooling, hardware degradation, and client satisfaction while making critical decisions under pressure.
 
+![Game play](images/dcd-001.jpg)
+
+![Game play](images/dcd-002.jpg)
+
+![Game play](images/dcd-003.jpg)
+
+![Game play](images/dcd-004.jpg)
+
+![Game play](images/dcd-005.jpg)
+
 ## Features
 
 - **5 Real Data Center Locations** — Choose from Portland, Des Moines, Phoenix, Ashburn, or Reykjavik, each with unique characteristics
