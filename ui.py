@@ -14,8 +14,8 @@ def print_banner():
     """Display game title banner"""
     banner = """
     ╔═══════════════════════════════════════════════════════════╗
-    ║                   DATA CENTER DEATH                        ║
-    ║              A Game of Power, Heat & Decisions             ║
+    ║                   DATA CENTER DEATH                       ║
+    ║              A Game of Power, Heat & Decisions            ║
     ╚═══════════════════════════════════════════════════════════╝
     """
     console.print(banner, style="bold cyan")
@@ -98,16 +98,24 @@ def show_datacenter_choice():
     
     from game_state import DATA_CENTER_LOCATIONS
     
+    # Create numbered options for all data centers
     options = {}
-    for key, dc in DATA_CENTER_LOCATIONS.items():
-        options[key[0].upper()] = f"{dc.name} - {dc.location} (Power: {dc.power_capacity}MW, Cost: ${dc.base_cost:,.0f}/mo)"
+    location_keys = list(DATA_CENTER_LOCATIONS.keys())
+    location_map = {}
+    
+    for i, key in enumerate(location_keys, 1):
+        dc = DATA_CENTER_LOCATIONS[key]
+        options[str(i)] = f"{dc.name} - {dc.location} (Power: {dc.power_capacity}MW, Cost: ${dc.base_cost:,.0f}/mo)"
+        location_map[str(i)] = key
     
     print_menu("Data Centers", options)
     
-    choice = get_input("Select datacenter (O/I/A/V/R): ")
-    
-    location_map = {"O": "oregon", "I": "iowa", "A": "arizona", "V": "virginia", "R": "iceland"}
-    return location_map.get(choice, "oregon")
+    # Keep asking until valid selection
+    while True:
+        choice = get_input(f"Select datacenter (1-{len(location_keys)}): ")
+        if choice in location_map:
+            return location_map[choice]
+        console.print("[red]Invalid selection. Please enter a valid number.[/red]")
 
 def show_main_menu(game_state):
     """Show main game menu"""
